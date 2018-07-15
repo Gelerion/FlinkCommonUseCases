@@ -1,0 +1,21 @@
+The enviroCar Project provides a public data set (Source: 52°North enviroCar Server) of anonymized connected car data.
+
+These two files contain the same event records, but in one file the data is sorted by timestamp, while in the other the
+data is out of order (by at most 30 seconds). Except when data is missing (i.e. when the car was turned off),
+there should be an event every 5 seconds.
+
+wget http://training.data-artisans.com/trainingData/carInOrder.csv
+wget http://training.data-artisans.com/trainingData/carOutOfOrder.csv
+
+Schema of Connected Car Events
+Each event in our connected car dataset contains 23 fields, but we will only concern ourselves with these:
+
+id             : String  // a unique id for each event
+car_id         : String  // a unique id for the car
+timestamp      : long    // timestamp (milliseconds since the epoch)
+longitude      : float   // GPS longitude
+latitude       : float   // GPS latitude
+consumption    : float   // fuel consumption (liters per hour)
+speed          : float   // speed (kilometers per hour)
+throttle       : float   // throttle position (%)
+engineload     : float   // engine load (%)
